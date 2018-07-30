@@ -60,11 +60,11 @@ Returns a boolean value. Determines if the image has a square orientation. An im
 
 ### widthIncrease
 
-Returns a number value (int). The value represents the width increase, compared to `image.height` in percentage, eg `((width - height) * 100) / width`. Width increase is calculated when `isLandscape` is `true`.
+Returns a number value (int). The value represents the width increase, compared to `image.height` in percentage, eg `((width - height) * 100) / width`. Width increase is calculated when `isLandscape` is `true`. Otherwise, it returns `0`.
 
 ### heightIncrease
 
-Returns a number value (int). The value represents the height increase, compared to `image.width` in percentage, eg `((height - width) * 100) / height`. Height increase is calculated when `isPortrait` is `true`.
+Returns a number value (int). The value represents the height increase, compared to `image.width` in percentage, eg `((height - width) * 100) / height`. Height increase is calculated when `isPortrait` is `true`. Otherwise, it returns `0`.
 
 ### isSquareLikePortrait
 
