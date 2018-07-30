@@ -85,7 +85,7 @@ const orientation = getImageOrientation(1600, 900);
     isPortrait: false
     isLandscape: true
     isSquare: false
-    isSquareLikPortrait: false
+    isSquareLikePortrait: false
     isSquareLikeLandscape: false
     widthIncrease: 43
     heightIncrease: 0
@@ -100,7 +100,7 @@ const orientation = getImageOrientation(322, 480);
     isPortrait: true
     isLandscape: false
     isSquare: false
-    isSquareLikPortrait: false
+    isSquareLikePortrait: false
     isSquareLikeLandscape: false
     widthIncrease: 0
     heightIncrease: 32
@@ -115,7 +115,7 @@ const orientation = getImageOrientation(555, 480);
     isPortrait: false
     isLandscape: true
     isSquare: false
-    isSquareLikPortrait: false
+    isSquareLikePortrait: false
     isSquareLikeLandscape: true
     widthIncrease: 13
     heightIncrease: 0
@@ -130,7 +130,7 @@ const orientation = getImageOrientation(413, 480);
     isPortrait: true
     isLandscape: false
     isSquare: false
-    isSquareLikPortrait: true
+    isSquareLikePortrait: true
     isSquareLikeLandscape: false
     widthIncrease: 0
     heightIncrease: 13
@@ -145,7 +145,7 @@ const orientation = getImageOrientation(480, 480);
     isPortrait: false
     isLandscape: false
     isSquare: true
-    isSquareLikPortrait: false
+    isSquareLikePortrait: false
     isSquareLikeLandscape: false
     widthIncrease: 0
     heightIncrease: 0
