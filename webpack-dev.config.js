@@ -4,8 +4,7 @@ const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = {
   entry: [
-    './src/index.js',
-    './src/index.scss'
+    './index.js'
   ],
   module: {
     rules: [
@@ -14,31 +13,13 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react', 'stage-0']
+          presets: ['es2015', 'stage-0']
         }
-      },
-      {
-        test: /\.(css|sass|scss)$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
-      },
-      {
-        test: /\.scss$/,
-        use: 'sass-bulk-import-loader'
-      },
-      {
-        test: /\.svg$/,
-        use: 'svg-sprite-loader'
       }
     ],
     loaders: []
   },
-  plugins: [
-    new LiveReloadPlugin(),
-    new ExtractTextPlugin({
-      filename: './style.css',
-      allChunks: true,
-    })
-  ],
+  plugins: [],
   output: {
     filename: 'script.js',
     path: path.resolve(__dirname, './bundle')
