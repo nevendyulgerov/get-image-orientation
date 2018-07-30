@@ -70,7 +70,7 @@ Returns a number value (int). The value represents the height increase, compared
 
 Returns a boolean value. Determines if the image has a square-like portrait orientation. An image has a square-like portrait orientation, when that image `isPortrait` and its `heightIncrease` is less than `maxIncrease`. In other words, this check returns true for near-square portrait images, with height just a bit bigger than its width. This check is useful for differentiating standard portrait images from square-like images.
 
-### isSquareLikePortrait
+### isSquareLikeLandscape
 
 Returns a boolean value. Determines if the image has a square-like landscape orientation. An image has a square-like landscape orientation, when that image `isLandscape` and its `widthIncrease` is less than `maxIncrease`. This check returns true for near-square landscape images, with width just a bit bigger than its height. This check is useful for differentiating standard landscape images from square-like images.
 
