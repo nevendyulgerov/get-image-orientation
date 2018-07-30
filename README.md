@@ -32,7 +32,7 @@ const {
 ## Syntax
 
 ```javascript
-getImageOrientation(320, 240, 10)
+getImageOrientation(320, 240, 10);
 ```
 
 ### Parameters
@@ -73,5 +73,83 @@ Returns a boolean value. Determines if the image has a square-like portrait orie
 ### isSquareLikeLandscape
 
 Returns a boolean value. Determines if the image has a square-like landscape orientation. An image has a square-like landscape orientation, when that image `isLandscape` and its `widthIncrease` is less than `maxIncrease`. This check returns true for near-square landscape images, with width just a bit bigger than its height. This check is useful for differentiating standard landscape images from square-like images.
+
+## Tests
+
+
+```javascript
+const orientation = getImageOrientation(1600, 900);
+
+// orientation contains:
+{
+	isPortrait: false
+	isLandscape: true
+	isSquare: false
+	isSquareLikPortrait: false
+	isSquareLikeLandscape: false
+	widthIncrease: 43
+	heightIncrease: 0
+}
+```
+
+```javascript
+const orientation = getImageOrientation(322, 480);
+
+// orientation contains:
+{
+	isPortrait: true
+	isLandscape: false
+	isSquare: false
+	isSquareLikPortrait: false
+	isSquareLikeLandscape: false
+	widthIncrease: 0
+	heightIncrease: 32
+}
+```
+
+```javascript
+const orientation = getImageOrientation(555, 480);
+
+// orientation contains:
+{
+	isPortrait: false
+	isLandscape: true
+	isSquare: false
+	isSquareLikPortrait: false
+	isSquareLikeLandscape: true
+	widthIncrease: 13
+	heightIncrease: 0
+}
+```
+
+```javascript
+const orientation = getImageOrientation(413, 480);
+
+// orientation contains:
+{
+	isPortrait: true
+	isLandscape: false
+	isSquare: false
+	isSquareLikPortrait: true
+	isSquareLikeLandscape: false
+	widthIncrease: 0
+	heightIncrease: 13
+}
+```
+
+```javascript
+const orientation = getImageOrientation(480, 480);
+
+// orientation contains:
+{
+	isPortrait: false
+	isLandscape: false
+	isSquare: true
+	isSquareLikPortrait: false
+	isSquareLikeLandscape: false
+	widthIncrease: 0
+	heightIncrease: 0
+}
+```
 
 
