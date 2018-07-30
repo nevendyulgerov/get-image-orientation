@@ -83,12 +83,12 @@ const orientation = getImageOrientation(1600, 900);
 // orientation contains:
 {
     isPortrait: false
-	isLandscape: true
-	isSquare: false
-	isSquareLikPortrait: false
-	isSquareLikeLandscape: false
-	widthIncrease: 43
-	heightIncrease: 0
+    isLandscape: true
+    isSquare: false
+    isSquareLikPortrait: false
+    isSquareLikeLandscape: false
+    widthIncrease: 43
+    heightIncrease: 0
 }
 ```
 
@@ -97,13 +97,13 @@ const orientation = getImageOrientation(322, 480);
 
 // orientation contains:
 {
-	isPortrait: true
-	isLandscape: false
-	isSquare: false
-	isSquareLikPortrait: false
-	isSquareLikeLandscape: false
-	widthIncrease: 0
-	heightIncrease: 32
+    isPortrait: true
+    isLandscape: false
+    isSquare: false
+    isSquareLikPortrait: false
+    isSquareLikeLandscape: false
+    widthIncrease: 0
+    heightIncrease: 32
 }
 ```
 
@@ -112,13 +112,13 @@ const orientation = getImageOrientation(555, 480);
 
 // orientation contains:
 {
-	isPortrait: false
-	isLandscape: true
-	isSquare: false
-	isSquareLikPortrait: false
-	isSquareLikeLandscape: true
-	widthIncrease: 13
-	heightIncrease: 0
+    isPortrait: false
+    isLandscape: true
+    isSquare: false
+    isSquareLikPortrait: false
+    isSquareLikeLandscape: true
+    widthIncrease: 13
+    heightIncrease: 0
 }
 ```
 
@@ -127,13 +127,13 @@ const orientation = getImageOrientation(413, 480);
 
 // orientation contains:
 {
-	isPortrait: true
-	isLandscape: false
-	isSquare: false
-	isSquareLikPortrait: true
-	isSquareLikeLandscape: false
-	widthIncrease: 0
-	heightIncrease: 13
+    isPortrait: true
+    isLandscape: false
+    isSquare: false
+    isSquareLikPortrait: true
+    isSquareLikeLandscape: false
+    widthIncrease: 0
+    heightIncrease: 13
 }
 ```
 
@@ -142,13 +142,13 @@ const orientation = getImageOrientation(480, 480);
 
 // orientation contains:
 {
-	isPortrait: false
-	isLandscape: false
-	isSquare: true
-	isSquareLikPortrait: false
-	isSquareLikeLandscape: false
-	widthIncrease: 0
-	heightIncrease: 0
+    isPortrait: false
+    isLandscape: false
+    isSquare: true
+    isSquareLikPortrait: false
+    isSquareLikeLandscape: false
+    widthIncrease: 0
+    heightIncrease: 0
 }
 ```
 
