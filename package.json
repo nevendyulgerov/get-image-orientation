@@ -1,6 +1,6 @@
 {
   "name": "get-image-orientation",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utility for determining image orientation",
   "main": "input.js",
   "scripts": {
