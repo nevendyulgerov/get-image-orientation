@@ -82,7 +82,7 @@ const orientation = getImageOrientation(1600, 900);
 
 // orientation contains:
 {
-	isPortrait: false
+    isPortrait: false
 	isLandscape: true
 	isSquare: false
 	isSquareLikPortrait: false
