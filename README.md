@@ -41,38 +41,38 @@ getImageOrientation(320, 240, 10);
 
 - height - image height, REQUIRED
 
-- maxIncrease - max width/height increase in percentage, default = 15
+- maxIncrease - max width/height increase in percentage, default = 15. `maxIncrease` is used for determining `isSquareLikePortrait` and `isSquareLikeLandscape` flags.
 
 ## API
 `getImageOrientation` returns the following fields:
 
 ### isPortrait
 
-Returns a boolean value. Determines if the image has a portrait orientation. An image has a portrait orientation, when `image.width` > `image.height`.
+Boolean. Determines if the image has a portrait orientation. An image has a portrait orientation, when `image.width` > `image.height`.
 
 ### isLandscape
 
-Returns a boolean value. Determines if the image has a landscape orientation. An image has a landscape orientation, when `image.width` < `image.height`.
+Boolean. Determines if the image has a landscape orientation. An image has a landscape orientation, when `image.width` < `image.height`.
 
 ### isSquare
 
-Returns a boolean value. Determines if the image has a square orientation. An image has a square orientation, when `image.width` === `image.height`.
+Boolean. Determines if the image has a square orientation. An image has a square orientation, when `image.width` === `image.height`.
 
 ### widthIncrease
 
-Returns a number value (int). The value represents the width increase, compared to `image.height` in percentage, eg `((width - height) * 100) / width`. Width increase is calculated when `isLandscape` is `true`. Otherwise, it returns `0`.
+Number (int). The value represents the width increase, compared to `image.height` in percentage, eg `((width - height) * 100) / width`. Width increase is calculated when `isLandscape` is `true`. Otherwise, it returns `0`.
 
 ### heightIncrease
 
-Returns a number value (int). The value represents the height increase, compared to `image.width` in percentage, eg `((height - width) * 100) / height`. Height increase is calculated when `isPortrait` is `true`. Otherwise, it returns `0`.
+Number (int). The value represents the height increase, compared to `image.width` in percentage, eg `((height - width) * 100) / height`. Height increase is calculated when `isPortrait` is `true`. Otherwise, it returns `0`.
 
 ### isSquareLikePortrait
 
-Returns a boolean value. Determines if the image has a square-like portrait orientation. An image has a square-like portrait orientation, when that image `isPortrait` and its `heightIncrease` is less than `maxIncrease`. In other words, this check returns true for near-square portrait images, with height just a bit bigger than its width. This check is useful for differentiating standard portrait images from square-like images.
+Boolean. Determines if the image has a square-like portrait orientation. An image has a square-like portrait orientation, when that image `isPortrait` and its `heightIncrease` is less than `maxIncrease`. In other words, this check returns true for near-square portrait images, with height just a bit bigger than its width. This check is useful for differentiating standard portrait images from square-like images.
 
 ### isSquareLikeLandscape
 
-Returns a boolean value. Determines if the image has a square-like landscape orientation. An image has a square-like landscape orientation, when that image `isLandscape` and its `widthIncrease` is less than `maxIncrease`. This check returns true for near-square landscape images, with width just a bit bigger than its height. This check is useful for differentiating standard landscape images from square-like images.
+Boolean. Determines if the image has a square-like landscape orientation. An image has a square-like landscape orientation, when that image `isLandscape` and its `widthIncrease` is less than `maxIncrease`. This check returns true for near-square landscape images, with width just a bit bigger than its height. This check is useful for differentiating standard landscape images from square-like images.
 
 ## Tests
 
