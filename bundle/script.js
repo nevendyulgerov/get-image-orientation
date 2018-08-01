@@ -207,8 +207,6 @@ var getImageOrientation = function getImageOrientation(width, height) {
     };
 };
 
-window['getImageOrientation'] = getImageOrientation;
-
 module.exports = getImageOrientation;
 
 /***/ })
