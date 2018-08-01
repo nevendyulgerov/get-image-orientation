@@ -77,6 +77,38 @@ module.exports = __webpack_require__(1);
 "use strict";
 
 
+var aspectRatios = [{
+    aspect: 0.67,
+    ratio: '2/3'
+}, {
+    aspect: 1,
+    ratio: '1/1'
+}, {
+    aspect: 1.33,
+    ratio: '4/3'
+}, {
+    aspect: 1.6,
+    ratio: '16/10'
+}, {
+    aspect: 1.67,
+    ratio: '5/3'
+}, {
+    aspect: 1.78,
+    ratio: '16/9'
+}, {
+    aspect: 2.37,
+    ratio: '21/9'
+}];
+
+/**
+ * @description Check if value is of type 'string'
+ * @param val
+ * @returns {boolean}
+ */
+var isStr = function isStr(val) {
+    return typeof val === 'string';
+};
+
 /**
  * @description To int
  * @param value
@@ -84,6 +116,60 @@ module.exports = __webpack_require__(1);
  */
 var toInt = function toInt(value) {
     return parseInt(value, 10);
+};
+
+/**
+ * @description To float
+ * @param value
+ * @param decimalPlaces
+ * @returns {string}
+ */
+var toFloat = function toFloat(value) {
+    var decimalPlaces = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+    return parseFloat(value).toFixed(decimalPlaces);
+};
+
+/**
+ * @description Get aspect
+ * @param width
+ * @param height
+ * @returns {*}
+ */
+var getAspect = function getAspect(width, height) {
+    var aspect = toFloat(width / height);
+    return isStr(aspect) ? +aspect : aspect;
+};
+
+/**
+ * @description Get matchin ratio
+ * @param aspect
+ * @returns {*}
+ */
+var getMatchingRatio = function getMatchingRatio(aspect) {
+    var match = {};
+    var matchOffset = Number.MAX_SAFE_INTEGER;
+    var isMatchFound = false;
+
+    aspectRatios.forEach(function (aspectRatio) {
+        if (isMatchFound) {
+            return false;
+        }
+        var isBigger = aspect > aspectRatio.aspect;
+        var isSmaller = aspect < aspectRatio.aspect;
+
+        if (!isBigger && !isSmaller) {
+            isMatchFound = true;
+            match = aspectRatio;
+        }
+
+        var offset = isBigger ? aspect - aspectRatio.aspect : aspectRatio.aspect - aspect;
+        if (offset < matchOffset) {
+            match = aspectRatio;
+            matchOffset = offset;
+        }
+    });
+
+    return match;
 };
 
 /**
@@ -103,6 +189,10 @@ var getImageOrientation = function getImageOrientation(width, height) {
     var heightIncrease = height > width ? toInt((height - width) * 100 / height) : 0;
     var isSquareLikeLandscape = isLandscape && widthIncrease < maxIncrease;
     var isSquareLikePortrait = isPortrait && heightIncrease < maxIncrease;
+    var aspect = getAspect(width, height);
+
+    var _getMatchingRatio = getMatchingRatio(aspect),
+        ratio = _getMatchingRatio.ratio;
 
     return {
         isLandscape: isLandscape,
@@ -111,9 +201,13 @@ var getImageOrientation = function getImageOrientation(width, height) {
         isSquareLikeLandscape: isSquareLikeLandscape,
         isSquareLikePortrait: isSquareLikePortrait,
         widthIncrease: widthIncrease,
-        heightIncrease: heightIncrease
+        heightIncrease: heightIncrease,
+        aspect: aspect,
+        ratio: ratio
     };
 };
+
+window['getImageOrientation'] = getImageOrientation;
 
 module.exports = getImageOrientation;
 
