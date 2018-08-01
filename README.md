@@ -15,7 +15,8 @@ Run `npm install get-image-orientation --save`
 ## Usage
 
 ```javascript
-const getImageOrientation = require('get-image-orientation');
+import getImageOrientation from 'get-image-orientation';
+
 const image = {
     width: 320,
     height: 240
