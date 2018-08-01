@@ -42,11 +42,11 @@ getImageOrientation(320, 240, 10);
 
 ### Parameters
 
-- **width** - image width, **REQUIRED**
+**width** - image width, **REQUIRED**
 
-- **height** - image height, **REQUIRED**
+**height** - image height, **REQUIRED**
 
-- **maxIncrease** - max width/height increase in percentage, default = 15. `maxIncrease` is used for determining `isSquareLikePortrait` and `isSquareLikeLandscape` flags.
+**maxIncrease** - max width/height increase in percentage, default = 15. `maxIncrease` is used for determining `isSquareLikePortrait` and `isSquareLikeLandscape` flags.
 
 ## API
 `getImageOrientation` returns the following fields:
