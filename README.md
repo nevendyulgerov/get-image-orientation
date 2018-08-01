@@ -29,7 +29,7 @@ const {
     widthIncrease, // number/int
     heightIncrease, // number/int
     isSquareLikePortrait, // boolean
-    isSquareLikeLandscape // boolean
+    isSquareLikeLandscape, // boolean
     ratio // string
 } = getImageOrientation(image.width, image.height, 10);
 ```
@@ -42,9 +42,9 @@ getImageOrientation(320, 240, 10);
 
 ### Parameters
 
-- width - image width, REQUIRED
+- width - image width, **REQUIRED**
 
-- height - image height, REQUIRED
+- height - image height, **REQUIRED**
 
 - maxIncrease - max width/height increase in percentage, default = 15. `maxIncrease` is used for determining `isSquareLikePortrait` and `isSquareLikeLandscape` flags.
 
