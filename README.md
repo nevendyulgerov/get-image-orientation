@@ -21,6 +21,7 @@ const image = {
     height: 240
 };
 const {
+    aspect, // number/int/float
     isPortrait, // boolean
     isLandscape, // boolean
     isSquare, // boolean
@@ -28,8 +29,7 @@ const {
     heightIncrease, // number/int
     isSquareLikePortrait, // boolean
     isSquareLikeLandscape // boolean
-    aspect, // number/int/float
-    ratio, // string
+    ratio // string
 } = getImageOrientation(image.width, image.height, 10);
 ```
 
