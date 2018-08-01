@@ -117,6 +117,4 @@ const getImageOrientation = (width, height, maxIncrease = 15) => {
     };
 };
 
-window['getImageOrientation'] = getImageOrientation;
-
 module.exports = getImageOrientation;
