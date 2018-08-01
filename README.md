@@ -51,7 +51,7 @@ getImageOrientation(320, 240, 10);
 `getImageOrientation` returns the following fields:
 
 ### aspect
-`Number (int/float)`. This value represents the aspect of the image. It refers to the image height, when that image has a landscape orientation. When the image has a portrait orientation, it refers to its height. Aspect is calculated by the formula `image.width / image.height`.
+`Number (int/float)`. This value represents the aspect of the image. It refers to the image height, when that image has a landscape orientation. When the image has a portrait orientation, it refers to its width. Aspect is calculated by the formula `image.width / image.height`.
 
 ### ratio
 `String`. Represents the closest matching aspect ratio for the image. Available ratios are `2/3`, `1/1`, `4/3`, `16/10`, `5/3`, `16/9`, `21/9`.
