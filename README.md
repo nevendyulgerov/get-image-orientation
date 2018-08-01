@@ -109,7 +109,7 @@ const orientation = getImageOrientation(322, 480);
 
 // orientation contains:
 {
-    aspect: 1.78,
+    aspect: 0.67,
     isPortrait: true,
     isLandscape: false,
     isSquare: false,
@@ -117,7 +117,7 @@ const orientation = getImageOrientation(322, 480);
     isSquareLikeLandscape: false,
     widthIncrease: 0,
     heightIncrease: 32,
-    ratio: '16/9'
+    ratio: '2/3'
 }
 ```
 
@@ -126,13 +126,15 @@ const orientation = getImageOrientation(555, 480);
 
 // orientation contains:
 {
-    isPortrait: false
-    isLandscape: true
-    isSquare: false
-    isSquareLikePortrait: false
-    isSquareLikeLandscape: true
-    widthIncrease: 13
-    heightIncrease: 0
+    aspect: 1.16,
+    isPortrait: false,
+    isLandscape: true,
+    isSquare: false,
+    isSquareLikePortrait: false,
+    isSquareLikeLandscape: true,
+    widthIncrease: 13,
+    heightIncrease: 0,
+    ratio: '1/1'
 }
 ```
 
@@ -141,13 +143,15 @@ const orientation = getImageOrientation(413, 480);
 
 // orientation contains:
 {
-    isPortrait: true
-    isLandscape: false
-    isSquare: false
-    isSquareLikePortrait: true
-    isSquareLikeLandscape: false
-    widthIncrease: 0
-    heightIncrease: 13
+    aspect: 0.86,
+    isPortrait: true,
+    isLandscape: false,
+    isSquare: false,
+    isSquareLikePortrait: true,
+    isSquareLikeLandscape: false,
+    widthIncrease: 0,
+    heightIncrease: 13,
+    ratio: '1/1'
 }
 ```
 
@@ -156,13 +160,15 @@ const orientation = getImageOrientation(480, 480);
 
 // orientation contains:
 {
-    isPortrait: false
-    isLandscape: false
-    isSquare: true
-    isSquareLikePortrait: false
-    isSquareLikeLandscape: false
+    aspect: 1,
+    isPortrait: false,
+    isLandscape: false,
+    isSquare: true,
+    isSquareLikePortrait: false,
+    isSquareLikeLandscape: false,
     widthIncrease: 0
-    heightIncrease: 0
+    heightIncrease: 0,
+    ratio: '1/1'
 }
 ```
 
