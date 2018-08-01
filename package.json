@@ -1,6 +1,6 @@
 {
   "name": "get-image-orientation",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Utility for determining image orientation and aspect ratio",
   "main": "input.js",
   "scripts": {
