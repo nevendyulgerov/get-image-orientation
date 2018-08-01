@@ -1,9 +1,11 @@
 <!-- Name -->
-<h1>
-  <a href="https://github.com/nevendyulgerov/get-image-orientation">Get Image Orientation</a>
-</h1>
+<a href="https://github.com/nevendyulgerov/get-image-orientation">
+    <h1>
+        Get Image Orientation
+    </h1>
+</a>
 
-<p>Utility for determining image orientation</p>
+<p>Utility for determining image orientation and aspect ratio.</p>
 
 
 ## Installation
@@ -26,6 +28,8 @@ const {
     heightIncrease, // number/int
     isSquareLikePortrait, // boolean
     isSquareLikeLandscape // boolean
+    aspect, // number/int/float
+    ratio, // string
 } = getImageOrientation(image.width, image.height, 10);
 ```
 
@@ -46,6 +50,12 @@ getImageOrientation(320, 240, 10);
 ## API
 `getImageOrientation` returns the following fields:
 
+### aspect
+`Number (int/float)`. This value represents the aspect of the image. It refers to the image height, when that image has a landscape orientation. When the image has a portrait orientation, it refers to its height. Aspect is calculated by the formula `image.width / image.height`.
+
+### ratio
+`String`. Represents the closest matching aspect ratio for the image. Available ratios are `2/3`, `1/1`, `4/3`, `16/10`, `5/3`, `16/9`, `21/9`.
+
 ### isPortrait
 
 `Boolean`. Determines if the image has a portrait orientation. An image has a portrait orientation, when `image.width` > `image.height`.
@@ -60,19 +70,19 @@ getImageOrientation(320, 240, 10);
 
 ### widthIncrease
 
-`Number (int)`. The value represents the width increase, compared to `image.height` in percentage, eg `((width - height) * 100) / width`. Width increase is calculated when `isLandscape` is `true`. Otherwise, it returns `0`.
+`Number (int)`. This value represents the width increase, compared to `image.height` in percentage, eg `((width - height) * 100) / width`. Width increase is calculated when `isLandscape` is `true`. Otherwise, it returns `0`.
 
 ### heightIncrease
 
-`Number (int)`. The value represents the height increase, compared to `image.width` in percentage, eg `((height - width) * 100) / height`. Height increase is calculated when `isPortrait` is `true`. Otherwise, it returns `0`.
+`Number (int)`. This value represents the height increase, compared to `image.width` in percentage, eg `((height - width) * 100) / height`. Height increase is calculated when `isPortrait` is `true`. Otherwise, it returns `0`.
 
 ### isSquareLikePortrait
 
-`Boolean`. Determines if the image has a square-like portrait orientation. An image has a square-like portrait orientation, when that image `isPortrait` and its `heightIncrease` is less than `maxIncrease`. In other words, this check returns true for near-square portrait images, with height just a bit bigger than its width. This check is useful for differentiating standard portrait images from square-like images.
+`Boolean`. Determines if the image has a square-like portrait orientation. An image has a square-like portrait orientation, when that image `isPortrait` and its `heightIncrease` is less than or equal to `maxIncrease`. In other words, this check returns true for near-square portrait images, with height just a bit bigger than their width. This check is useful for differentiating standard portrait images from square-like images.
 
 ### isSquareLikeLandscape
 
-`Boolean`. Determines if the image has a square-like landscape orientation. An image has a square-like landscape orientation, when that image `isLandscape` and its `widthIncrease` is less than `maxIncrease`. This check returns true for near-square landscape images, with width just a bit bigger than its height. This check is useful for differentiating standard landscape images from square-like images.
+`Boolean`. Determines if the image has a square-like landscape orientation. An image has a square-like landscape orientation, when that image `isLandscape` and its `widthIncrease` is less than or equal to `maxIncrease`. This check returns true for near-square landscape images, with width just a bit bigger than their height. This check is useful for differentiating standard landscape images from square-like images.
 
 ## Tests
 
@@ -82,13 +92,15 @@ const orientation = getImageOrientation(1600, 900);
 
 // orientation contains:
 {
-    isPortrait: false
-    isLandscape: true
-    isSquare: false
-    isSquareLikePortrait: false
-    isSquareLikeLandscape: false
-    widthIncrease: 43
-    heightIncrease: 0
+    aspect: 1.78,
+    isPortrait: false,
+    isLandscape: true,
+    isSquare: false,
+    isSquareLikePortrait: false,
+    isSquareLikeLandscape: false,
+    widthIncrease: 43,
+    heightIncrease: 0,
+    ratio: '16/9'
 }
 ```
 
@@ -97,13 +109,15 @@ const orientation = getImageOrientation(322, 480);
 
 // orientation contains:
 {
-    isPortrait: true
-    isLandscape: false
-    isSquare: false
-    isSquareLikePortrait: false
-    isSquareLikeLandscape: false
-    widthIncrease: 0
-    heightIncrease: 32
+    aspect: 1.78,
+    isPortrait: true,
+    isLandscape: false,
+    isSquare: false,
+    isSquareLikePortrait: false,
+    isSquareLikeLandscape: false,
+    widthIncrease: 0,
+    heightIncrease: 32,
+    ratio: '16/9'
 }
 ```
 
