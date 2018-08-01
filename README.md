@@ -53,9 +53,6 @@ getImageOrientation(320, 240, 10);
 ### aspect
 `Number (int/float)`. This value represents the aspect of the image. It refers to the image height, when that image has a landscape orientation. When the image has a portrait orientation, it refers to its width. Aspect is calculated by the formula `image.width / image.height`.
 
-### ratio
-`String`. Represents the closest matching aspect ratio for the image. Available ratios are `2/3`, `1/1`, `4/3`, `16/10`, `5/3`, `16/9`, `21/9`.
-
 ### isPortrait
 
 `Boolean`. Determines if the image has a portrait orientation. An image has a portrait orientation, when `image.width` > `image.height`.
@@ -83,6 +80,9 @@ getImageOrientation(320, 240, 10);
 ### isSquareLikeLandscape
 
 `Boolean`. Determines if the image has a square-like landscape orientation. An image has a square-like landscape orientation, when that image `isLandscape` and its `widthIncrease` is less than or equal to `maxIncrease`. This check returns true for near-square landscape images, with width just a bit bigger than their height. This check is useful for differentiating standard landscape images from square-like images.
+
+### ratio
+`String`. Represents the closest matching aspect ratio for the image. Available ratios are `2/3`, `1/1`, `4/3`, `16/10`, `5/3`, `16/9`, `21/9`.
 
 ## Tests
 
