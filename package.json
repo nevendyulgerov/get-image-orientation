@@ -1,7 +1,7 @@
 {
   "name": "get-image-orientation",
   "version": "0.0.3",
-  "description": "Utility for determining image orientation",
+  "description": "Utility for determining image orientation and aspect ratio",
   "main": "input.js",
   "scripts": {
     "server": "python -m http.server",
@@ -31,8 +31,12 @@
   },
   "keywords": [
     "image",
+    "aspect-ratio",
+    "aspect-ratio-calculator",
     "image-orientation",
     "image-dimension",
+    "image-aspect-ratio",
+    "image-ratio",
     "image-size"
   ],
   "author": "Neven Dyulgerov",
